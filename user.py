@@ -54,4 +54,23 @@ class Credentials:
         Returns :
         password of person that matches the number.
         '''
-        
+        for credential in cls.credentials_list:
+            if(credential.account == account):
+                return credential
+    @classmethod
+    def credentials_exit(cls,account):
+        '''
+        this method checks whether the user details exists from the user list
+        it returns a boolean on availability or not i.e True|False
+        '''
+        for credential in cls.credentials_list:
+            if credential.account == account:
+                return True
+        return False
+    def generate_password(self):
+        '''
+        generate random password consisting of letters
+        '''
+        password = string.ascii_uppercaser + string.ascii_lowercase + 'haverts'
+        return ''.join(random.choice(password) for i in range(1,9))
+    

@@ -1,11 +1,11 @@
-
-
+import random
+import string
 class User:
     '''
     class that generate instance of user and user_list password
     '''
     user_list = []
-    def __init__(self,username,password)
+    def __init__(self,username,password):
         self.username = username
         self.password = password
     def save_user(self):
@@ -58,7 +58,7 @@ class Credentials:
             if(credential.account == account):
                 return credential
     @classmethod
-    def credentials_exit(cls,account):
+    def credentials_exist(cls,account):
         '''
         this method checks whether the user details exists from the user list
         it returns a boolean on availability or not i.e True|False
@@ -71,6 +71,6 @@ class Credentials:
         '''
         generate random password consisting of letters
         '''
-        password = string.ascii_uppercaser + string.ascii_lowercase + 'haverts'
+        password = string.ascii_uppercase + string.ascii_lowercase
         return ''.join(random.choice(password) for i in range(1,9))
     
